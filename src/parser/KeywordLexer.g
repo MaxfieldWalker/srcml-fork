@@ -40,8 +40,8 @@ header {
     #undef CONST
     #undef VOID
     #undef DELETE
-    #undef FALSE
-    #undef TRUE
+    #undef FALSETOKEN
+    #undef TRUETOKEN
     #undef INTERFACE
     #undef OUT
     #undef IN
@@ -513,8 +513,8 @@ KeywordLexer(UTF8CharBuffer* pinput, int language, OPTION_TYPE & options,
         { "&amp;&amp;"   , RVALUEREF     , LANGUAGE_CXX_FAMILY }, 
 
         // special C++ constant values
-        { "false"        , FALSE         , LANGUAGE_OO }, 
-        { "true"         , TRUE          , LANGUAGE_OO }, 
+        { "false"        , FALSETOKEN         , LANGUAGE_OO }, 
+        { "true"         , TRUETOKEN          , LANGUAGE_OO }, 
 
         // C++ specifiers
         { "final"         , FINAL          , LANGUAGE_CXX },
@@ -647,12 +647,12 @@ KeywordLexer(UTF8CharBuffer* pinput, int language, OPTION_TYPE & options,
         { "@synthesize"          , SYNTHESIZE          , LANGUAGE_OBJECTIVE_C },
         { "@dynamic"             , DYNAMIC             , LANGUAGE_OBJECTIVE_C },
         { "in"                   , IN                  , LANGUAGE_OBJECTIVE_C },
-        { "@YES"                 , TRUE                , LANGUAGE_OBJECTIVE_C },
-        { "@NO"                  , FALSE               , LANGUAGE_OBJECTIVE_C },
-        { "YES"                  , TRUE                , LANGUAGE_OBJECTIVE_C },
-        { "NO"                   , FALSE               , LANGUAGE_OBJECTIVE_C },
-        { "@true"                , TRUE                , LANGUAGE_OBJECTIVE_C },
-        { "@false"               , FALSE               , LANGUAGE_OBJECTIVE_C },
+        { "@YES"                 , TRUETOKEN                , LANGUAGE_OBJECTIVE_C },
+        { "@NO"                  , FALSETOKEN               , LANGUAGE_OBJECTIVE_C },
+        { "YES"                  , TRUETOKEN                , LANGUAGE_OBJECTIVE_C },
+        { "NO"                   , FALSETOKEN               , LANGUAGE_OBJECTIVE_C },
+        { "@true"                , TRUETOKEN                , LANGUAGE_OBJECTIVE_C },
+        { "@false"               , FALSETOKEN               , LANGUAGE_OBJECTIVE_C },
         { "@encode"              , ENCODE              , LANGUAGE_OBJECTIVE_C },
         { "@selector"            , SELECTOR            , LANGUAGE_OBJECTIVE_C },
         { "@autoreleasepool"     , AUTORELEASEPOOL     , LANGUAGE_OBJECTIVE_C },

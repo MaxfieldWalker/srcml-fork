@@ -10,6 +10,6 @@ union { } foo2;
 void func(Foo3_4, int bar);
 void func(int bar, Foo5_6) { }
 
-enum { _FALSE, _TRUE } foo7;
+enum { FALSETOKEN, TRUETOKEN } foo7;
 
 void func() { }

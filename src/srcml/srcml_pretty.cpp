@@ -249,7 +249,7 @@ void display_template(srcml_archive* srcml_arch, pretty_template_t& output_templ
         while (unit) {
             BOOST_FOREACH(const std::string arg, output_template.body_args) {
                 if (arg == "i") {
-                    body_params.push_back(std::to_string(unit_number));
+                    body_params.push_back(std::to_string((long long int)unit_number));
                 }
                 else if (arg == "N") {
                     for (size_t i = 0; i < ns_size; ++i) {
@@ -308,7 +308,7 @@ void display_template(srcml_archive* srcml_arch, pretty_template_t& output_templ
     if (output_template.footer) {
         BOOST_FOREACH(const std::string arg, output_template.footer_args) {
             if (arg == "C") {
-                footer_params.push_back(std::to_string(unit_number + 1));
+                footer_params.push_back(std::to_string((long long int)(unit_number + 1)));
             }
             else {
                 const char* param = acquire_metadata(srcml_arch, NULL, arg);
